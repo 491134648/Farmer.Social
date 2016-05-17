@@ -6,6 +6,9 @@ using System.Web.Mvc;
 
 namespace Farmer.Social.WebSite.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BaseController : Controller
     {
         protected UserClaim getUserClaimByOpenIdOrUnionId(string openId, string unionId, string tag)

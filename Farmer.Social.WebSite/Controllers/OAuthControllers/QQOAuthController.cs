@@ -5,7 +5,6 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Farmer.Social.Options;
 
-
 namespace Farmer.Social.WebSite.Controllers.OAuthControllers
 {
     public partial class QQOAuthController : BaseController

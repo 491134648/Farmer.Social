@@ -17,7 +17,6 @@ using Farmer.Social.Wechat.Options;
 using Farmer.Social.Weibo.Options;
 using MVCForum.Domain.DomainModel.Customers;
 
-
 namespace MVCForum.Website.Controllers.OAuthControllers
 {
     public partial class WeiboController : BaseController

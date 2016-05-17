@@ -11,6 +11,7 @@ namespace Farmer.Social
     /// </summary>
     public class SocialUser
     {
+        
         /// <summary>
         /// 用户Id
         /// </summary>
