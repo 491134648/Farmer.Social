@@ -27,7 +27,7 @@ namespace Farmer.Social.WebSite.Controllers.OAuthControllers
         {
             _options = new AuthenticationOptions()
             {
-                AppId = "",
+                AppId = "",//对应第三方appid
                 AppSecret = "",
                 AuthorizeUrl = "https://graph.qq.com",
                 Host="http://www.nongyou360.com/",
