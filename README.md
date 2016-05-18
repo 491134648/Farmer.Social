@@ -25,34 +25,5 @@
 以QQ为例:
 
 从以上文档中可以得知，获得openId以及QQ获得用户信息需要三步,第一步，封装请求链接，然后服务的返回浏览器302跳转至微信或QQ等用户授权窗口
-public ActionResult QQLogin(string returnUrl)
-        {
-            AuthenticationScope scope=new AuthenticationScope(){
-                State=Guid.NewGuid().ToString().Replace("-", ""),
-                Scope="get_user_info"
-            };
-            if (!string.IsNullOrEmpty(returnUrl))
-            {
-                Session["returnUrl"] = returnUrl;
-            }
-            Session["requeststate"] = scope.State;
-            string url=_tencentHandler.GetAuthorizationUrl(scope);
-            return Redirect(url);
-        }
-        public override string GetAuthorizationUrl(AuthenticationScope scope)
-        {
-            string url = string.Empty;
-            if (string.IsNullOrEmpty(scope.Scope))
-            {
-                url = string.Format("{0}/oauth2.0/authorize?response_type=code&client_id={1}&redirect_uri={2}&state={3}", _options.AuthorizeUrl, _options.AppId, string.Concat(_options.Host, _options.Callback), scope.State);
-            }
-            else
-            {
-                url = string.Format("{0}/oauth2.0/authorize?response_type=code&client_id={1}&redirect_uri={2}&state={3}&scope={4}", _options.AuthorizeUrl, _options.AppId, Uri.EscapeDataString(string.Concat(_options.Host, _options.Callback)), scope.State, scope.Scope);
-            }
-            return url;
-        }
-         成功后浏览器会跳转至
 
-redirect_uri传递的链接窗口即QQOAuthController下面的CallBack
-具体 http://www.cnblogs.com/shatanku/p/5502094.html
+具体参见 http://www.cnblogs.com/shatanku/p/5502094.html
